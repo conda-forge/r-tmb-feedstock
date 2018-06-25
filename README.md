@@ -14,14 +14,16 @@ Summary: With this tool, a user should be able to quickly implement complex rand
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-tmb-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-tmb-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-tmb-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-tmb-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-tmb-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-tmb-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-tmb-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-tmb-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-tmb-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-tmb-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-tmb-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-tmb-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-tmb/badges/version.svg)](https://anaconda.org/conda-forge/r-tmb)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-tmb/badges/downloads.svg)](https://anaconda.org/conda-forge/r-tmb)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--tmb-green.svg)](https://anaconda.org/conda-forge/r-tmb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-tmb.svg)](https://anaconda.org/conda-forge/r-tmb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-tmb.svg)](https://anaconda.org/conda-forge/r-tmb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-tmb.svg)](https://anaconda.org/conda-forge/r-tmb) |
 
 Installing r-tmb
 ================
