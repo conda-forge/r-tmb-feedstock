@@ -1,4 +1,4 @@
-{% set version = '1.7.11' %}
+{% set version = "1.7.14" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/TMB_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/TMB/TMB_{{ version }}.tar.gz
-  sha256: 38ffc616154741a81ebadc52efc27f0b9de63254aa03960bb690ce7a098fe4ec
+  sha256: b499644b4bbc89f191101639ff8d9d9ec90b896ca24ca650e6aea36f0928ec2e
 
 build:
   number: 0
