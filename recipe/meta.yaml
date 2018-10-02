@@ -1,5 +1,4 @@
-{% set version = "1.7.14" %}
-
+{% set version = '1.7.14' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,39 +9,41 @@ package:
 source:
   fn: TMB_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/TMB_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/TMB/TMB_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/TMB_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/TMB/TMB_{{ version }}.tar.gz
   sha256: b499644b4bbc89f191101639ff8d9d9ec90b896ca24ca650e6aea36f0928ec2e
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 2
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
-    - r-matrix
+    - r-matrix >=1.0_12
     - r-rcppeigen
-
   run:
     - r-base
-    - r-matrix
+    - {{native}}gcc-libs         # [win]
+    - r-matrix >=1.0_12
     - r-rcppeigen
 
 test:
   commands:
-    - $R -e "library('TMB')"  # [not win]
+    - $R -e "library('TMB')"           # [not win]
     - "\"%R%\" -e \"library('TMB')\""  # [win]
 
 about:
@@ -54,7 +55,6 @@ about:
     matrix routines available from R) to obtain an efficient implementation of the applied
     Laplace approximation with exact derivatives. Key features are: Automatic sparseness
     detection, parallelism through ''BLAS'' and parallel user templates.'
-
   license_family: GPL2
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
   license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
@@ -65,3 +65,5 @@ extra:
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
