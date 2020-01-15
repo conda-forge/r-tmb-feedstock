@@ -1,4 +1,4 @@
-{% set version = '1.7.15' %}
+{% set version = "1.7.16" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TMB_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TMB/TMB_{{ version }}.tar.gz
-  sha256: facbc7cc44f993e0d827a6eb84928f8e35b0b3f263582d885a307e150b434de4
+  sha256: 84740a2eaecd2ece7049c82d661fe1688008fdece96d90399d31a5d8a0089e52
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
