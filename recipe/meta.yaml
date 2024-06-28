@@ -1,4 +1,4 @@
-{% set version = "1.9.12" %}
+{% set version = "1.9.13" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TMB_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TMB/TMB_{{ version }}.tar.gz
-  sha256: db5801f43e55fdeea520355628286c491c694f1165e8567eecd5f3d864cfc7f0
+  sha256: eb118c9b9af48d3d84e36f021eb9bea6e1b7ba2b374610040efcb153a8ed297b
 
 build:
   merge_build_host: true  # [win]
