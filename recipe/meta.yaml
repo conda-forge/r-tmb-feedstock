@@ -12,13 +12,16 @@ source:
   sha256: 4d9c5ac2fac814104bc344a7495ba5b056c270e0eacf1d38e7ca54c4d3976bd3
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-matrix                     # [build_platform != target_platform]
+    - r-rcppeigen                  # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
@@ -30,11 +33,13 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-    - libgomp                      # [linux]
+    - libgomp                      # [not osx]
     - llvm-openmp                  # [osx]
   host:
     - libblas
     - liblapack
+    - libgomp                      # [not osx]
+    - llvm-openmp                  # [osx]
     - r-base
     - r-matrix >=1.0_12
     - r-rcppeigen
