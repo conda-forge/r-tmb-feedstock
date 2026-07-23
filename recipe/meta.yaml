@@ -1,4 +1,4 @@
-{% set version = "1.9.22" %}
+{% set version = "1.9.23" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TMB_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TMB/TMB_{{ version }}.tar.gz
-  sha256: 42482e1e83b609197f0bb381228a7e9ddaaf9906f858415464b1fce88bb06fec
+  sha256: 74ebdc43e4ef96f208837aaab0750e2ceae148e6376a040f129e9182d4d07c2b
 
 build:
   number: 0
